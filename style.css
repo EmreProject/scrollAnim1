@@ -1,0 +1,138 @@
+
+
+:root{
+
+    --color-1:#000000;
+    --color-2:#03071e;
+    --color-3:#370617;
+    --color-4:#6a040f;
+    --color-5:#d00000;
+    --color-6:#dc2f02;
+    --color-7:#e85d04;
+    --color-8:#faa307;
+    --color-9:#ffba08;
+
+    }
+    
+    
+
+
+html,body{
+    margin:0;
+   background-color: var(--color-1);
+}
+
+:is(h1,h3){
+
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    margin:0;
+    color:white;
+    
+}
+
+div.main{
+
+height:150vh;
+padding: 0px 8%;
+display: grid;
+grid-template-columns: repeat(12,1fr);
+grid-template-rows: repeat(12,1fr);
+position: relative;
+
+& .nonstatic{
+
+    position: absolute;
+    width:35%;
+    right:8%;
+  
+    height:100vh;
+
+}
+
+
+& .static-content{
+    position: sticky;
+    top:0;
+grid-column: 1/13;
+grid-row: 1/13;
+    height:100vh;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-auto-rows: minmax(50px,auto);
+    grid-template-areas:
+    "hd hd hd  . . . . . ."
+    ". . . . . . . . ."
+    ". . . . . . . . ."
+    "ft ft ft ft ft . . . ."
+    "ft ft ft ft ft . . . .";
+    
+    }
+    
+
+& div.brand-sec{
+    position: fixed;
+padding-top: 40px;
+    grid-area: hd;
+    justify-self: start;
+    align-self:flex-start;
+
+    & h1{
+        font-size: 3.4rem;
+        letter-spacing: 1px;
+        font-weight: 500;
+        color:var(--color-6)
+    }
+    & h3{
+        font-size:1.7rem;
+        letter-spacing: 1px;
+        font-weight: 200;
+        text-align: right;
+       
+    }
+
+}
+
+
+& div.bottom-text-sec{
+
+    grid-area: ft;
+    align-self: center;
+
+    & h1{
+        font-size: 6rem;
+        letter-spacing: 1px;
+        font-weight: 500;
+      
+    }
+    & h3{
+        font-size:1.8rem;
+        letter-spacing: 1px;
+        font-weight: 300;
+        font-size: clamp(1.8rem,3vw,3rem);
+        opacity: 0.8;
+        
+    }
+
+    & div.sameline{
+        display: flex;
+        gap: 2rem;
+        flex-wrap: nowrap;
+       align-items: center;
+       & h3{
+        font-size: clamp(1.8rem,3vw,3rem);
+
+       }
+    }
+
+}
+
+
+
+}
+
+
+div.bosluk{
+
+    height:500vh;
+}
