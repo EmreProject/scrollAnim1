@@ -2,7 +2,7 @@
 import { rightShape,makeShinyLine } from "./lines.js";
 import {animate as animateTextColor} from "./textColorScroll.js"
     
-rightShape.load();
+
 
 function responsiveLineSetting(){
 
@@ -26,12 +26,15 @@ function responsiveLineSetting(){
 }
 
 
+rightShape.load(responsiveLineSetting());
+
 
 const bottomText={
     viewObj:document.querySelector("#right-lines"),
     text_unexpected: document.querySelectorAll(".bottom-text-sec h1")[0],
     text_spaces:document.querySelectorAll(".bottom-text-sec h1")[1]
 }
+
 
 window.addEventListener("scroll",function(e){
 

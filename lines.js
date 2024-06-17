@@ -1,10 +1,11 @@
 
 const rightShape={
 
-    load(){
+    load(height){
 
         this.canvasContainer=document.querySelector(".nonstatic");
         this.canvas=document.querySelector(".nonstatic > canvas");
+        this.resetCanvasSize(height);
     },
   
     drawLines(number){
