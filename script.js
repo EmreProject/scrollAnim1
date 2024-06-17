@@ -3,14 +3,38 @@ import { rightShape,makeShinyLine } from "./lines.js";
     
 rightShape.load();
 
+function responsiveLineSetting(){
+
+    const dön={
+        lineNumber:undefined,
+        height:undefined
+    };
+    const width=window.innerWidth;
+    if(width<=500){
+    dön.lineNumber= 8;
+    }else if(width<=1000){
+        dön.lineNumber= 10;
+    }else{
+        dön.lineNumber= 15;
+    }
+
+    dön.height=window.innerHeight/6*4;
+
+
+    return dön;
+}
+
 window.addEventListener("load",()=>{
-    rightShape.resetCanvasSize(document.querySelector(".bottom-text-sec"));
-    rightShape.drawLines(15);
+
+    const{lineNumber,height}=responsiveLineSetting();
+    rightShape.resetCanvasSize(height);
+    rightShape.drawLines(lineNumber);//number of lines to draw in right red lines
 })
 
 window.addEventListener("resize",()=>{
-    rightShape.resetCanvasSize(document.querySelector(".bottom-text-sec"));
-    rightShape.drawLines(15);
+    const{lineNumber,height}=responsiveLineSetting();
+    rightShape.resetCanvasSize(height);
+    rightShape.drawLines(lineNumber);//number of lines to draw in right red lines
 })
 
 

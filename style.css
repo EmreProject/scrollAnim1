@@ -78,13 +78,14 @@ padding-top: 40px;
     align-self:flex-start;
 
     & h1{
-        font-size: 3.4rem;
+     
+        font-size:  clamp(1.8rem,2.5vw,5rem);;
         letter-spacing: 1px;
         font-weight: 500;
         color:var(--color-6)
     }
     & h3{
-        font-size:1.7rem;
+        font-size: clamp(1em,1.2vw,3rem);
         letter-spacing: 1px;
         font-weight: 200;
         text-align: right;
@@ -100,7 +101,7 @@ padding-top: 40px;
     align-self: center;
 
     & h1{
-        font-size: 6rem;
+        font-size:  clamp(2.5rem,5vw,5rem);;
         letter-spacing: 1px;
         font-weight: 500;
       
@@ -109,20 +110,26 @@ padding-top: 40px;
         font-size:1.8rem;
         letter-spacing: 1px;
         font-weight: 300;
-        font-size: clamp(1.8rem,3vw,3rem);
+        font-size: clamp(1.5em,3vw,3rem);
         opacity: 0.8;
         
     }
 
     & div.sameline{
         display: flex;
-        gap: 2rem;
+        gap: 1rem;
         flex-wrap: nowrap;
-       align-items: center;
-       & h3{
-        font-size: clamp(1.8rem,3vw,3rem);
+        align-items: center;
+       & div{
 
+        display: flex;
+        flex-direction: column;
+        & h3{
+            font-size: clamp(1.5rem,3vw,3rem);
+            white-space: nowrap;
+           }
        }
+    
     }
 
 }

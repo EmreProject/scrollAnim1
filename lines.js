@@ -29,10 +29,11 @@ const rightShape={
    ctx.restore();
 
     },
-    resetCanvasSize(bottomtext){
+    resetCanvasSize(height){
 
        this.canvas.width=this.canvasContainer.offsetWidth;
-       this.canvas.height=bottomtext.getBoundingClientRect().bottom+window.scrollY -100;
+       this.canvas.height=height ;
+       
 
     }
 
