@@ -101,7 +101,7 @@ padding-top: 40px;
     align-self: center;
 
     & h1{
-        font-size:  clamp(2.5rem,5vw,5rem);;
+        font-size:  clamp(1.8rem,5vw,5rem);;
         letter-spacing: 1px;
         font-weight: 500;
       
@@ -110,7 +110,7 @@ padding-top: 40px;
         font-size:1.8rem;
         letter-spacing: 1px;
         font-weight: 300;
-        font-size: clamp(1.5em,3vw,3rem);
+        font-size: clamp(1rem,3vw,3rem);
         opacity: 0.8;
         
     }
@@ -125,7 +125,7 @@ padding-top: 40px;
         display: flex;
         flex-direction: column;
         & h3{
-            font-size: clamp(1.5rem,3vw,3rem);
+            font-size: clamp(1rem,3vw,3rem);
             white-space: nowrap;
            }
        }
