@@ -104,6 +104,9 @@ padding-top: 40px;
         font-size:  clamp(1.8rem,5vw,5rem);;
         letter-spacing: 1px;
         font-weight: 500;
+        color:rgba(0,0,0,0);
+        background:linear-gradient(to right,var(--color-7) 0%,white 0%);
+        background-clip: text;
       
     }
     & h3{
