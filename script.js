@@ -24,6 +24,28 @@ function responsiveLineSetting(){
     return dön;
 }
 
+
+
+const bottomText={
+
+    text_unexpected: document.querySelectorAll(".bottom-text-sec h1")[0],
+    text_spaces:document.querySelectorAll(".bottom-text-sec h1")[1]
+}
+console.log(bottomText);
+
+
+const scrollHeroAnimation={
+
+
+
+    
+}
+
+
+
+
+
+
 window.addEventListener("load",()=>{
 
     const{lineNumber,height}=responsiveLineSetting();
@@ -39,9 +61,3 @@ window.addEventListener("resize",()=>{
 
 
 
-const scrollHeroAnimation={
-
-
-
-    
-}
