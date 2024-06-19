@@ -55,7 +55,8 @@ const scrollHeroAnimation={
     
 }
 
-
+const dene1=document.querySelector(".hor-scroll-content");
+dene1.scrollLeft+=0;
 
 
 

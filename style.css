@@ -146,15 +146,35 @@ position: relative;
 
 & .hor-scroll-content{
     position: sticky;
-    top:0;
-    height:100vh;
+    top:18vh;
+    height:75vh;
     width: 100%;
     background-color:black;
     box-sizing: border-box;
-    padding-top:12%;
+    padding-top:20%;
     margin-top: 250px;
     grid-column: 1/13;
-   
+    overflow-x: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+  
+& .text-content{
+    flex-shrink: 0;
+    flex-grow: 0;
+     width:35%;
+     color: white;
+}
+
+   & img{
+align-self: flex-start;
+   flex-shrink: 0;
+   flex-grow: 0;
+    width:65%;
+    height:80%;
+    object-fit: cover;
+ 
+   }
 
 }
 
@@ -166,5 +186,11 @@ position: relative;
 
 div.bosluk{
   
-    height:500vh;
+    height:300vh;
+    
+}
+
+div.bosluk-2{
+  
+    height:1000vh;
 }
