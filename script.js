@@ -1,7 +1,12 @@
 
 import { rightShape,makeShinyLine } from "./lines.js";
 import {animate as animateTextColor} from "./textColorScroll.js"
+import { horizontalAnimation } from "./horizontalScroll.js";
     
+
+
+
+  
 
 
 function responsiveLineSetting(){
@@ -48,16 +53,20 @@ bottomText.text_spaces.style.backgroundClip="text";
 
 
 
-const scrollHeroAnimation={
-
-
-
-    
-}
-
 const dene1=document.querySelector(".hor-scroll-content");
 dene1.scrollLeft+=0;
 
+
+
+//HORIZONTAL SCROLL ANİM
+window.scrollTo(0,0);
+const horizontalContainer=document.querySelector(".hor-scroll-content");
+const startPixel=horizontalContainer.getBoundingClientRect().top - window.innerHeight*0.02 + 50;
+const horizontal=new horizontalAnimation(horizontalContainer,startPixel);
+horizontal.lazyImageList=[...document.querySelectorAll(".hor-scroll-content img")];
+horizontal.visibleRatio=0.2;
+horizontal.setExtraSpace(document.querySelector(".bosluk-for-hor-scroll"),100);
+horizontal.Start();
 
 
 

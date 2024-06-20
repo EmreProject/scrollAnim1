@@ -15,7 +15,9 @@ const rightShape={
    ctx.save();
 
    ctx.lineWidth = 2;
-   ctx.strokeStyle="#6a040f";
+   ctx.strokeStyle="rgba(45, 0, 247, 0.8";
+
+   
 
    ctx.beginPath();
    const bottomMiddlePoint={x:this.canvas.width/2, y:this.canvas.height};

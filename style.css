@@ -4,13 +4,13 @@
 
     --color-1:#000000;
     --color-2:#03071e;
-    --color-3:#370617;
-    --color-4:#6a040f;
-    --color-5:#d00000;
-    --color-6:#dc2f02;
-    --color-7:#e85d04;
-    --color-8:#faa307;
-    --color-9:#ffba08;
+    --color-3:#2d00f7;
+    --color-4:#6a00f4;
+    --color-5:#8900f2;
+    --color-6:#b100e8;
+    --color-7:#d100d1;
+    --color-8:#e500a4;
+    --color-9:#f20089;
 
     }
     
@@ -44,7 +44,7 @@ div.brand-sec{
         font-size:  clamp(1.8rem,2.5vw,5rem);;
         letter-spacing: 1px;
         font-weight: 500;
-        color:var(--color-6)
+        color:var(--color-4)
     }
     & h3{
         font-size: clamp(1em,1.2vw,3rem);
@@ -110,7 +110,7 @@ position: relative;
         letter-spacing: 1px;
         font-weight: 500;
         color:rgba(0,0,0,0);
-        background:linear-gradient(to right,var(--color-7) 0%,white 0%);
+        background:linear-gradient(to right,var(--color-6) 0%,white 0%);
         background-clip: text;
       
     }
@@ -146,12 +146,12 @@ position: relative;
 
 & .hor-scroll-content{
     position: sticky;
-    top:18vh;
-    height:75vh;
+    top:2vh;
+    height:94vh;
     width: 100%;
     background-color:black;
     box-sizing: border-box;
-    padding-top:20%;
+    padding-top:13vh;
     margin-top: 250px;
     grid-column: 1/13;
     overflow-x: hidden;
@@ -164,31 +164,46 @@ position: relative;
     flex-grow: 0;
      width:35%;
      color: white;
+
+box-sizing: border-box;
+padding:0 4%;
+font-family: "Urbanist", sans-serif;
+     & h1{
+        font-size:1.7rem;
+        font-weight: 900;
+     }
+     & p{
+        font-size: 1rem;
+     opacity: 0.8;
+     }
+     a{
+        text-decoration: none;
+        color: white;
+        font-weight: 700;
+     }
 }
 
    & img{
-align-self: flex-start;
+    align-self: flex-start;
    flex-shrink: 0;
    flex-grow: 0;
     width:65%;
-    height:80%;
-    object-fit: cover;
+    height:85%;
  
+    object-fit: cover;
+    filter: blur(50px);
+    transition: filter 500ms ease-in ;
+    clip-path: inset(5px 0px 0px 0px);
    }
-
-}
-
-
-
-}
-
-
-
-div.bosluk{
   
-    height:300vh;
-    
+
 }
+
+
+
+}
+
+
 
 div.bosluk-2{
   
