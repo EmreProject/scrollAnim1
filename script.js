@@ -65,7 +65,7 @@ const offsetDiv=document.querySelector(".calculateOffset");
 const horizontal=new horizontalAnimation(horizontalContainer);
 horizontal.offsetDiv=offsetDiv;
 horizontal.margin=250;
-horizontal.topVh=17;
+horizontal.topVh=13;
 horizontal.calculateStartPixel();
 horizontal.lazyImageList=[...document.querySelectorAll(".hor-scroll-content img")];
 horizontal.visibleRatio=0.2;
@@ -73,22 +73,37 @@ horizontal.setExtraSpace(document.querySelector(".bosluk-for-hor-scroll"),100);
 horizontal.Start();
 
 
+let {lineNumber,height}=responsiveLineSetting();
 
 
 window.addEventListener("load",()=>{
 
-    const{lineNumber,height}=responsiveLineSetting();
+   const get1=responsiveLineSetting();
+   lineNumber=get1.lineNumber;
+   height=get1.height;
     rightShape.resetCanvasSize(height);
-    rightShape.drawLines(lineNumber);//number of lines to draw in right red lines
+    makeShinyLine(lineNumber);
 })
 
 window.addEventListener("resize",()=>{
-    const{lineNumber,height}=responsiveLineSetting();
+    const get1=responsiveLineSetting();
+    lineNumber=get1.lineNumber;
+    height=get1.height;
     rightShape.resetCanvasSize(height);
-    rightShape.drawLines(lineNumber);//number of lines to draw in right red lines
+    makeShinyLine(lineNumber);
 
+   
    
 })
 
+window.addEventListener("scroll",function(){
 
+    const textHero=document.querySelector(".bottom-text-sec");
+
+        if(horizontalContainer.getBoundingClientRect().top < textHero.getBoundingClientRect().top){
+            textHero.style.visibility="hidden";
+        }else{
+            textHero.style.visibility="visible";
+        }
+});
 

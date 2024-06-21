@@ -1,4 +1,6 @@
 
+import {animateAlways} from "./animationTemp.js"
+
 function throttleScrollAnimation(animation){
 
    
@@ -19,6 +21,8 @@ function throttleScrollAnimation(animation){
 
 
 }
+
+
 
 
 function horizontalAnimation(container){
@@ -92,6 +96,27 @@ horizontalAnimation.prototype.setExtraSpace=function(boslukDiv,extra){
     });
 }
 
+horizontalAnimation.prototype.BorderAnimation=function(){
+
+   const easeInOutCubic= function(x){
+        return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+        }
+
+    const draw=function(progress){
+
+        this.lazyImageList.forEach(img=>{
+
+            const newDegree=progress*360;
+            img.style.borderImage=`linear-gradient(${newDegree}deg,var(--color-7), black 35% 65%,var(--color-3)) 1`;
+
+        });
+    };
+
+    animateAlways({timing:easeInOutCubic,draw:draw.bind(this),duration:7000});
+
+}
+
+
 horizontalAnimation.prototype.Start=function(){
 
 this.startLazyLoadChecker();
@@ -100,10 +125,11 @@ const horizontalMove=function(){
     this.container.scrollLeft=window.scrollY-this.startScrollPx;
 
 }
-
+this.BorderAnimation();
 throttleScrollAnimation(horizontalMove.bind(this));
 
 }
+
 
 
 export {horizontalAnimation}
