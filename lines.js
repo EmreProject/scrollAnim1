@@ -121,6 +121,10 @@ ctx.restore();
   
 
   cancelAnimationFrame(rightShape.animController.latest);
+  
+  cancelAnimationFrame(rightShape.animController.latest2);
+  
+  cancelAnimationFrame(rightShape.animController.latest3);
   rightShape.animController.setSettings(easeOutSine,draw,3000);
 rightShape.animController.animateStart();
 
