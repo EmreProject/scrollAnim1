@@ -166,20 +166,21 @@ position: relative;
      color: white;
 
 box-sizing: border-box;
-padding:0 4%;
+padding:0 6.5%;
 font-family: "Urbanist", sans-serif;
      & h1{
-        font-size:1.7rem;
+        font-size: clamp(1.1rem,3vw,2rem);
         font-weight: 900;
      }
      & p{
-        font-size: 1rem;
+        font-size: clamp(0.8rem,2.2vw,1.6rem);
      opacity: 0.8;
      }
      a{
         text-decoration: none;
         color: white;
         font-weight: 700;
+        font-size: clamp(0.8rem,2.2vw,1.6rem);
      }
 }
 
@@ -203,6 +204,25 @@ font-family: "Urbanist", sans-serif;
 
 }
 
+
+@media (max-width:400px) {
+
+    .hor-scroll-content .text-content{
+
+    padding: 0 10px !important;
+
+    }
+}
+
+
+@media (min-width:400px) and  (max-width:1100px){
+
+    .hor-scroll-content .text-content{
+
+    padding: 0 4% !important;
+
+    }
+}
 
 
 div.bosluk-2{
