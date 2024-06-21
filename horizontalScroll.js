@@ -21,16 +21,26 @@ function throttleScrollAnimation(animation){
 }
 
 
-function horizontalAnimation(container,startScrollPixel){
+function horizontalAnimation(container){
 
 this.container=container;
 this.lazyImageList=[];
 this.visibleRatio=undefined;//ex. 0.2
-this.startScrollPx=startScrollPixel;
+this.startScrollPx;
+this.offsetDiv;
+this.topVh;
+this.margin;
 
 
 
 }
+
+horizontalAnimation.prototype.calculateStartPixel=function(){
+
+
+    this.startScrollPx=this.offsetDiv.offsetTop+this.margin-(window.innerHeight*this.topVh/100);
+}
+
 horizontalAnimation.prototype.startLazyLoadChecker=function(){
 
     const checker=function(){
@@ -59,12 +69,26 @@ horizontalAnimation.prototype.setExtraSpace=function(boslukDiv,extra){
     const extraWidth=this.container.scrollWidth - window.innerWidth;
     boslukDiv.style.height=`${extraWidth+ extra}px`;
 
-    const resizeBind=this.setExtraSpace.bind(this,boslukDiv,extra);
+   let throttleResize=undefined;
+   const resizeBosluk=function(){
+
+    
+    this.calculateStartPixel();
+    const extraWidth=this.container.scrollWidth - window.innerWidth;
+    boslukDiv.style.height=`${extraWidth+ extra}px`;
+    
+   };
+   const bindResizeBosluk=resizeBosluk.bind(this);
     window.addEventListener("resize",()=>{
-        window.addEventListener("load",()=> resizeBind());
-        location.reload();
-      
        
+        if(!throttleResize){
+            throttleResize= setTimeout(bindResizeBosluk,100);
+        }else{
+
+            clearTimeout(throttleResize);
+            throttleResize= setTimeout(bindResizeBosluk,100);
+        }
+
     });
 }
 

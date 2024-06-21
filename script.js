@@ -59,14 +59,19 @@ dene1.scrollLeft+=0;
 
 
 //HORIZONTAL SCROLL ANİM
-window.scrollTo(0,0);
+
 const horizontalContainer=document.querySelector(".hor-scroll-content");
-const startPixel=horizontalContainer.getBoundingClientRect().top - window.innerHeight*0.02 + 50;
-const horizontal=new horizontalAnimation(horizontalContainer,startPixel);
+const offsetDiv=document.querySelector(".calculateOffset");
+const horizontal=new horizontalAnimation(horizontalContainer);
+horizontal.offsetDiv=offsetDiv;
+horizontal.margin=250;
+horizontal.topVh=17;
+horizontal.calculateStartPixel();
 horizontal.lazyImageList=[...document.querySelectorAll(".hor-scroll-content img")];
 horizontal.visibleRatio=0.2;
 horizontal.setExtraSpace(document.querySelector(".bosluk-for-hor-scroll"),100);
 horizontal.Start();
+
 
 
 
@@ -81,6 +86,8 @@ window.addEventListener("resize",()=>{
     const{lineNumber,height}=responsiveLineSetting();
     rightShape.resetCanvasSize(height);
     rightShape.drawLines(lineNumber);//number of lines to draw in right red lines
+
+   
 })
 
 

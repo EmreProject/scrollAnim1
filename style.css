@@ -146,12 +146,12 @@ position: relative;
 
 & .hor-scroll-content{
     position: sticky;
-    top:2vh;
-    height:94vh;
+    top:17vh;
+    height:75vh;
     width: 100%;
     background-color:black;
     box-sizing: border-box;
-    padding-top:13vh;
+
     margin-top: 250px;
     grid-column: 1/13;
     overflow-x: hidden;
